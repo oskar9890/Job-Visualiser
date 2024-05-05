@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+
+
+{{listing_id}}
+<div class="">
+    {% if update %}
+        <div class="success-message" id="successMessage">
+            <h4>{{update}}</h4>
+        </div>
+        <div class="account-flex">
+    {% endif %}
+
+    {% if not_found %}
+        <div class="error-message" id="successMessage">
+            <h4>{{not_found}}</h4>
+        </div>
+        <div class="account-flex">
+    {% endif %}
+        
+
+    <div style="display: flex;justify-content: center;margin-bottom: 30px;margin-top: 50px;">
+        <form id="search" action="{{ url_for('search_account') }}" method="POST"> 
+            <div class="search-account">
+                <input class="login-input" type="search" id="company" name="company" placeholder="Search..." autocomplete="off">
+                <button style="height: 2.5em!important;" class="update-time">Search</button>
+            </div>
+          </form>
+    </div>
+
+        <div>            
+            <div class="account-main">
+                <div class="account-form">
+                    {% for listing in listings %}
+                        <div class="account-listings">
+                            <div>
+                                <h1 style="font-size:18px;">{{listing.title}}</h1>
+                                <p>{{listing.company_name}}</p>
+                            </div>
+
+                            <div style="display: flex;">
+                                <form  action="{{ url_for('update_listing_status') }}" method="post">
+                                    <div class="account-update">
+                                        <input style="display: none;"  type="text" id="id" name="id" placeholder="{{listing.id}}" value="{{listing.id}}" autocomplete="off">
+                                        <select name="status" id="status" selected="selected">
+                                            {% for status in ['applied', 'rejected', 'interview', 'offer-received', 'offer-accepted'] %}
+                                                <option value="{{ status }}" {% if listing.status == status %}selected{% endif %}>{{ status.capitalize() }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <br>
+                                        <div>
+                                            <button  class="update-button">Update</button>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                                <form style="display: flex;align-items: center;"  action="{{ url_for('delete_listing') }}" method="post">
+                                    <input style="display: none;"  type="text" id="id" name="id" placeholder="{{listing.id}}" value="{{listing.id}}" autocomplete="off">
+                                    <div class="account-update">
+                                        <div class="delete-listing">
+                                            <button class="delete-button">&#10006;</button>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                            
+                            
+                        </div>
+                        <hr style="background-color: white; width: 100%;margin-bottom: 30px;">
+                        
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+
+
+            

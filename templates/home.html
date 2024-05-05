@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+<div class="main-homepage">
+
+    <div class="homepage-top">
+        <h1>Track Your Job Applications</h1>
+        <div class="vl"></div>
+        <p class="homepage-top-width">My Site provides a user-friendly platform to track your job applications. With our intuitive interface, you can easily add, manage, and update your applications. You can also view statistics and track the keywords used in your applications. Start organising your job search today!</p>
+        <div class="get-started">
+            <button><a href="{{ url_for('add') }}">Get Started</a></button>
+        </div>
+
+    </div>
+
+
+    <div class="homepage-image-div">
+        <img src="/static/images/analytics.jpg">
+    </div>
+
+    
+</div>
+
+<div>
+    <h1 class="job-analytics-title" style="margin: 100px;text-align: center;text-transform: uppercase;font-size: 34px;">Job analytics made simple</h1>
+</div>
+
+<div style="margin-bottom:120px;overflow:hidden;" class="">
+    <div style="" class="row">
+      <div class="col section-2-image1">
+
+      </div>
+      <div class="col section2-homepage-center">
+        <div>
+          <img class="section2-images" src="/static/images/about.png">
+            <h1 class="section2-titles">About me</h1>
+            <p class="section2-content">Hey there! I'm Oskar, a software engineer enthusiast with a passion for web and app development.</p>
+        </div>
+        <div>
+          <img class="section2-images" src="/static/images/problem.png">
+            <h1 class="section2-titles">problem</h1>
+            <p class="section2-content">While diving deeper into my passion for programming, I realised many developers struggle to choose their area of focus and what key technologies to apply themeselves in.</p>
+        </div>
+        <div>
+          <img class="section2-images" src="/static/images/solution.png">
+            <h1 class="section2-titles">solution</h1>
+            <p class="section2-content">The solution for this is ApplicationTracker. Simply submit which job advertisements you are interested in and you will find key analytics about them; most importantly the frequency of key skills and technologies used.</p>
+        </div>
+      </div>
+      <div class="col section-2-image2">
+
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <h3>Stay Informed</h3>
+    <p>Enter your email</p>
+    <div style="display: flex;">
+        <input type="text" id="fname" name="fname"><br>
+        <button class="subscribe-button">Subscribe</button>
+    </div>
+    <p>Thanks for subscribing!</p>
+</footer>
+{% endblock %}

@@ -1,0 +1,547 @@
+body, html {
+  margin: 0;
+  min-height: 100%;
+  color:white;
+  background-color: #0d1216;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  
+}
+
+
+ /* ------------------------------------------------------------navbar */
+
+
+ .navbar-logo{
+  color:white;
+  margin-left: 10px;
+}
+
+.navbar-buttons-1{
+  background:#cc334f;
+  margin-left:10px;
+  border:none;
+}
+
+.nav-link{
+  color:white!important;
+}
+
+.navbar-buttons-1:hover{
+  transform: scale(1.1);
+}
+
+.navbar-logo:hover, .logo-image:hover{
+  transform: scale(1.1);
+  color: white;
+  text-decoration: none;
+}
+
+
+nav {
+  color: black;
+  padding: 15px 20px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+nav ul li a:hover {
+    /* color: #edb612; */
+    color: #cc334f;
+}
+
+
+ /* ------------------------------------------------------------homepage */
+
+
+.homepage-top{
+  color: white;
+  /* border: 10px solid red; */
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Caudex';
+}
+
+.homepage-top h1{
+  font-size: 96px;
+  margin: 0;
+  width: 650px;
+  text-align: center;
+}
+
+.homepage-top p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.vl {
+  border-left: 1px solid white;
+  height: 60px;
+  margin: 40px;
+}
+
+.homepage-top-width{
+  width: 500px;
+}
+
+.get-started{
+  display: flex;
+  justify-content: center;
+}
+
+.get-started a{
+  text-decoration: none;
+  color: white;
+}
+
+.get-started button{
+  background: #cc334f;
+  border:none;
+  outline:none;
+  width: 145px;
+  height: 50px;
+  border-radius: 12px;
+  color:white;
+  text-transform:uppercase;
+  font-size:16px;
+  margin-top: 10px;
+}
+
+.subscribe-button{
+  background: #cc334f;
+  border:none;
+  outline:none;
+  width: 115px;
+  height: 40px;
+  border-radius: 12px;
+  color:white;
+  text-transform:uppercase;
+  font-size:13px;
+}
+
+.get-started button:hover, .subscribe-button:hover{
+  transform: scale(1.1);
+}
+
+.homepage-image-div{
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+}
+
+.section-2-image1{
+  background-image: url('/static/images/homepage-sectino2-image1.png');
+  height:850px;
+  opacity:0.3;
+}
+
+.section-2-image2{
+  background-image: url('/static/images/homepage-sectino2-image2.png');
+  height:850px;
+  opacity:0.3;
+}
+
+.section2-homepage-center{
+  display:flex;
+  justify-content:space-evenly;
+  flex-direction:column;
+  text-align:center;
+}
+
+.section2-homepage-center{
+  display:flex;
+  justify-content:space-evenly;
+  flex-direction:column;
+  text-align:center;
+}
+
+.section2-titles{
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.section2-content{
+  font-size:17px;
+  color:rgba(255,255,255,0.5);
+  width:80%;
+  margin-left:10%;
+}
+
+.section2-images{
+  height:50px;
+  margin-bottom:10px;
+}
+
+.section2-content {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.section2-content.fade-in {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1100px) {
+  .section-2-image1{
+      display:none;
+  }
+  .section-2-image2{
+      display:none;
+  }
+  .section2-content{
+    margin-left:25%;
+    width:50%;
+  }
+}
+
+
+@media only screen and (max-width: 990px) {
+  .popular-projects-2{
+      display:none;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+  .homepage-top p{
+    font-size: 12px;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .homepage-image-div{
+    display: none;
+  }
+
+  .homepage-top h1{
+    width: 400px;
+    font-size: 68px;
+  }
+  .homepage-top-width{
+    width: 80%;
+    }
+
+  .job-analytics-title{
+    margin: 40px!important;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .homepage-top h1{
+    font-size: 61px;
+  }
+}
+
+
+
+
+/* ------------------------------------------------------------footer */
+
+footer{
+  color: white;
+  /* height: 100px; */
+  font-family: 'Caudex';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  padding: 30px;
+}
+
+footer div input{
+  border: 1px solid rgba(204,51,79, 0.5);
+  border-radius: 1px;
+  margin-right: 10px;
+  width: 180px;
+}
+
+footer h3{
+  font-size: 36px;
+}
+
+footer p{
+  font-size: 16px;
+}
+
+
+
+ /* ------------------------------------------------------------main */
+
+ main{
+  min-height: 637px;
+ }
+
+
+
+ .canvas-keywords{
+  height: 50%!important;
+  width: 70%!important;
+}
+
+.convas-main{
+  display: flex;
+  flex-direction: row;
+  height:calc(100vh - 200px);
+  width:80%;
+  margin-left: 10%;
+}
+
+.canvas-div1, .canvas-div2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:50%;
+}
+
+.canvas-div1 h1, .canvas-div2 h1{
+  margin-top: 50px;
+}
+
+
+main{
+  font-family: 'Caudex';
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .convas-main{
+      flex-direction: column;
+  }
+  .canvas-div1, .canvas-div2{
+    width: 100%;
+  }
+}
+
+
+
+
+
+ /* ------------------------------------------------------------login */
+
+
+
+.login-form, .add-form{
+  background:#353a3e;
+  width: 500px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius:4px;
+  border:1px solid #585454;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-form, .add-form{
+      width: 350px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .account-form{
+      width: 60%!important;
+      margin-left: 20%!important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .account-form{
+      width: 90%!important;
+      margin-left: 5%!important;
+  }
+}
+
+
+
+.login-main, .signup-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:100%;
+  justify-content:center;
+}
+
+.signup-main{
+  display: none;
+}
+
+.signup-span{
+  text-decoration: underline;
+} 
+
+
+
+.login-input, .addform-input{
+  background: #0d1216;
+  border: 1px solid #585454;
+  height: 2.3em;
+  color:white;
+  font-size:15px;
+  padding:10px;
+  margin-bottom:15px;
+}
+
+.login-form button, .add-form button{
+  background: #cc334f;
+  border:none;
+  outline:none;
+  width: 109px;
+  height: 50px;
+  border-radius: 4px;
+  color:white;
+  text-transform:uppercase;
+  font-size:17px;
+}
+
+.login-form button:hover, .add-form button:hover{
+  transform: scale(1.1);
+}
+
+.login-button, .add-button{
+  display: flex;
+  justify-content: center;
+}
+
+
+.login-page-main{
+  height: 100vh;
+}
+
+/* ------------------------------------------------------------add */
+
+
+select{
+  height: 45px;
+  color: white;
+  background: #0d1216;
+  border:1px solid #585454;
+  font-size: 16px;
+  padding: 10px;
+}
+
+textarea{
+  width:100%;
+  height: 100px !important;;
+}
+
+
+.addpage-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:calc(100vh - 150px);
+  justify-content:center;
+}
+
+
+/* ------------------------------------------------------------account */
+
+.account-listings{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-form{
+  width: 40%;
+  margin-left: 30%;
+}
+
+.update-button{
+  background: #cc334f;
+  margin-left: 10px;
+  border:none;
+  outline:none;
+  width: 109px;
+  height: 45px;
+  border-radius: 4px;
+  color:white;
+  text-transform:uppercase;
+  font-size:17px;
+}
+
+.update-button:hover{
+  transform: scale(1.1);
+}
+
+.account-update{
+  display: flex;
+}
+
+.delete-button {
+  background-color: transparent;
+  color: red;
+  border: none;
+  cursor: pointer;
+  font-size: 2.5em;
+  margin-left: 10px;
+}
+
+.delete-button:hover {
+  text-decoration: none;
+  transform: scale(1.3);
+}
+
+.update-time{
+  background-color: #cc334f; 
+  margin-left: 10px; 
+  color:white;
+  width: 125px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.update-time:hover{
+  transform: scale(1.05);
+}
+
+
+
+/* ------------------------------------------------------------success and error messages */
+
+
+.success-message {
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.error-message{
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  text-transform: uppercase;
+}
+
+

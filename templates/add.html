@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+<div class="main-div">
+
+    {% if added %}
+        <div class="success-message" id="successMessage">
+            <h4>Job Added!</h4>
+        </div>
+        <div class="account-flex">
+    {% endif %}
+    <div>
+
+        <div class="addpage-main">
+            <form class="add-form" action="{{ url_for('add_form') }}" method="post">
+                <input class="addform-input" type="text" name="title" placeholder="Title" autocomplete="off" required>
+                <input class="addform-input" type="text" name="company_name" placeholder="Company Name" autocomplete="off" required>
+                <div>
+                    <textarea class="addform-input" rows="1" name="description"  placeholder="Description" required></textarea>
+                </div>
+                <select name="location" id="location">
+                    <option value="remote">Remote</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="on-site">On-Site</option>
+                </select>
+                <br>
+                <select name="salary" id="salary">
+                    <option value="undisclosed">Undisclosed</option>
+                    <option value="£20,000-£30,000">£20,000-£30,000</option>
+                    <option value="£30,000-£40,000">£30,000-£40,000</option>
+                    <option value="£40,000-£50,000">£40,000-£50,000</option>
+                    <option value="£50,000-£60,000">£50,000-£60,000</option>
+                    <option value="£60,000-£70,000">£60,000-£70,000</option>
+                    <option value="£70,000+">£70,000+</option>
+                </select>
+                <div class="add-button">
+                    <button style="margin-top:10px!important;">INSERT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

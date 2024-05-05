@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{{test}}
+    <div class="visualise-sort" style="width:80%;">
+        <form style="float:right" action="{{ url_for('visualise') }}" method="get" id="filter-form">
+            <div style="display: flex;">
+                           
+                <select name="time-period" id="time-period">
+                    <option value="all">All</option>
+                    <option value="last30" {% if timePeriod == 'last30' %} selected {% endif %}>Last 30 days</option>
+                    <option value="last7" {% if timePeriod == 'last7' %} selected {% endif %}>Last 7 days</option>
+                    <option value="today" {% if timePeriod == 'today' %} selected {% endif %}>Today</option>
+                </select>
+
+                <button class="update-time" type="submit">Update</button>
+            </div>
+        </form>
+
+
+    </div>
+    <div class="convas-main">
+        <div class="canvas-div1">
+            <h1>Software Engineering Skills</h1>
+            <canvas class="canvas-keywords" id="skillsChart"></canvas>
+    
+            <h1>Dates</h1>
+            <canvas class="canvas-keywords" id="locationsChart"></canvas>
+        </div>
+        
+        <div class="canvas-div2">
+            <h1>Salaries</h1>
+            <canvas class="canvas-keywords" id="salariesChart"></canvas>
+        
+            <h1>Status</h1>
+            <canvas class="canvas-keywords" id="statusChart"></canvas>
+        </div>
+    </div>
+    
+
+    <script>
+        // convert flask data to js object
+        const skillData = {{ result | tojson }};
+        const locationData = {{ locations_result | tojson }};
+        const salaryData = {{ salaries_result | tojson }};
+        const statusData = {{ status_result | tojson }};
+
+        // get labels and data for chart.js
+        const skillLabels = skillData.map(skill => skill[0]);
+        const skillValues = skillData.map(skill => skill[1]);
+
+        const locationLabels = locationData.map(location => location[0]);
+        const locationValues = locationData.map(location => location[1]);
+
+        const salaryLabels = salaryData.map(salary => salary[0]);
+        const salaryValues = salaryData.map(salary => salary[1]);
+
+        const statusLabels = statusData.map(status => status[0]);
+        const statusValues = statusData.map(status => status[1]);
+
+        // bar chart for skills
+        const skillCtx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(skillCtx, {
+            type: 'bar',
+            data: {
+                labels: skillLabels,
+                datasets: [{
+                    label: 'Skill Frequency',
+                    data: skillValues,
+                    backgroundColor: 'rgba(56,129,47, 0.5)',
+                    borderColor: 'rgba(56,129,47, 1)',
+                    borderWidth: 1
+                }]
+            },
+        });
+
+        // bar chart for dates added
+        const locationCtx = document.getElementById('locationsChart').getContext('2d');
+        const locationsChart = new Chart(locationCtx, {
+            type: 'bar',
+            data: {
+                labels: locationLabels,
+                datasets: [{
+                    label: 'Dates Fequency',
+                    data: locationValues,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+        });
+
+        // bar chart for salaries
+        const salaryCtx = document.getElementById('salariesChart').getContext('2d');
+        const salariesChart = new Chart(salaryCtx, {
+            type: 'bar',
+            data: {
+                labels: salaryLabels,
+                datasets: [{
+                    label: 'Salary Frequency',
+                    data: salaryValues,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+           
+        });
+
+        // bar chart for status
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        const statusChart = new Chart(statusCtx, {
+            type: 'bar',
+            data: {
+                labels: statusLabels,
+                datasets: [{
+                    label: 'Status Frequency',
+                    data: statusValues,
+                    backgroundColor: 'rgba(255, 205, 86, 0.5)',
+                    borderColor: 'rgba(255, 205, 86, 1)',
+                    borderWidth: 1
+                }]
+            },
+        });
+    </script>
+{% endblock %}
